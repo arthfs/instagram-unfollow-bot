@@ -19,11 +19,10 @@ time.sleep(4)
 
 count = 0
 for person in persons:
-    driver.get('https://www.instagram.com/{}'.format(person))
-    time.sleep(2)
-   
-    
     try:
+        driver.get('https://www.instagram.com/{}'.format(person))
+        time.sleep(2)
+   
         following = driver.find_element(By.XPATH,'/html/body/div[2]/div/div/div[2]/div/div/div[1]/div[2]/div/div[1]/section/main/div/header/section[2]/div/div/div[2]/div/div[1]/button/div/div[1]')
         if following.text != 'Follow':
             following.click()
